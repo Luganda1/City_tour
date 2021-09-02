@@ -1,0 +1,48 @@
+
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/picsart.jpg')}}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Add City</h1>
+            <span class="subheading">Add your memories here, for others to see!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+                <form action="{{url_for('new_post')}}" method="post" class="form" role="form" novalidate>
+                  {{ form.csrf_token() }}
+                  <em>
+                  <strong>
+                  {{ wtf.form_field(form.city, placeholder="City Name") }}
+                  {{ wtf.form_field(form.name, placeholder="Location Where Photo is Taken") }}
+                  {{ wtf.form_field(form.img, placeholder="Image url") }}
+                  {{ wtf.form_field(form.author, placeholder="author") }}
+                  {{ wtf.form_field(form.subtitles, placeholder="Short sentence describing the place") }}
+                  {{ wtf.form_field(form.info, placeholder="Description Content") }}
+                  </strong>
+                  </em>
+                    <p><input type=submit class='btn btn-warning btn-block'>
+                </form>
+              {{ ckeditor.load() }}
+              {{ ckeditor.config(name='info') }}
+      </div>
+    </div>
+  </div>
+
+{% include "footer.html" %}
+{% endblock %}
+
