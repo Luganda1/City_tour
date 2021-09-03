@@ -320,7 +320,7 @@ def blog():
 
     comments = Comment.query.all()
     date = dt.datetime.now().strftime("%b %d %Y")
-    return render_template('blog.html', post=city_post, form=form,
+    return render_template('post.html', post=city_post, form=form,
                            current_user=current_user, admin=admin, date=date)
 
 
