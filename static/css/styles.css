@@ -4051,7 +4051,6 @@ textarea.form-control-lg {
     overflow: visible;
   }
   .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
     flex-basis: auto;
   }
   .navbar-expand-lg .navbar-toggler {
@@ -10686,7 +10685,6 @@ footer {
 header.masthead {
   position: relative;
   margin-bottom: 3rem;
-  height: 75vh;
   padding-top: calc(8rem + 57px);
   padding-bottom: 8rem;
   background: no-repeat center center;
